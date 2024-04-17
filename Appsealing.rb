@@ -69,14 +69,15 @@ module AppSealing
       return nil
     end
 
-    if value.kind_of?(Array) and value.all? { |e| options.include?(e) }
-      return "\"#{value.join(",")}\""
-    else
-      throw Exception.new "#{key} option is invalid, please select the option you want as an array #{options}"
+    if value.kind_of?(Array)
+      if value.empty?
+        return nil
+      elsif value.all? { |e| options.include?(e) }
+        return "\"#{value.join(",")}\""
+      end
     end
-
+    throw Exception.new "#{key} option is invalid, please select the option you want as an array #{options}"
   end
-
 
   def self.createConfig(param)
     config = {}
