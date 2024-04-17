@@ -198,7 +198,6 @@ module AppSealing
     end 
 
     print "cmd: ", command, "\n"
-    return
 
     stdin, stdout, stderr, wait_thr = Open3.popen3(command)
     stdout.each_line { |line| 
