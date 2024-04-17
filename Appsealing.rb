@@ -211,7 +211,5 @@ module AppSealing
     exitstatus = wait_thr.value.exitstatus
 
     raise Exception.new "** fail to run appsealing (errorcode :#{exitstatus})" unless exitstatus == 0
-
-    FileUtils.cp android_build_output, appsealing_output
   end
 end
