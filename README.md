@@ -3,7 +3,8 @@
 1. download `Appsealing.rb` in `fastlane` folder
 
 2. modify `Fastfile`
-   Example
+
+Example
 ```ruby
 require './appsealing/Appsealing.rb'
 
